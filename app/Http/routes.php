@@ -38,3 +38,8 @@ Route::get('/update', function () {
  
      $user->posts()->whereId(1)->update(['title'=>'Updated First Post','body'=>'Updated First post content']);
   });
+  
+  Route::get('/delete', function () {
+     $user = User::find(1);
+     $user->posts()->whereId(1)->delete();
+  });
